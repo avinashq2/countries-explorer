@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Countries Explorer | Avinash Kumar</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>🌍 Countries <span>Explorer</span></h1>
+  <button id="theme-btn" type="button" aria-label="Toggle dark mode">🌙</button>
+</header>
+<main class="wrap">
+  <section class="controls">
+    <input id="search" type="search" placeholder="Search by country or capital..." aria-label="Search countries">
+    <select id="region" aria-label="Filter by region"><option value="">All regions</option></select>
+    <select id="sort" aria-label="Sort countries">
+      <option value="name">Sort: Name (A-Z)</option>
+      <option value="pop-desc">Population (high to low)</option>
+      <option value="pop-asc">Population (low to high)</option>
+      <option value="area-desc">Area (large to small)</option>
+    </select>
+  </section>
+  <p id="count" class="count"></p>
+  <div id="loader" class="state hidden"><div class="spinner"></div><p>Loading countries...</p></div>
+  <div id="error" class="state error hidden"><p id="error-msg"></p><button id="retry" type="button">Try again</button></div>
+  <div id="empty" class="state hidden"><p>No countries match your search.</p></div>
+  <section id="grid" class="grid"></section>
+  <div class="more"><button id="more" type="button" class="hidden">Load more</button></div>
+</main>
+<dialog id="modal"><button id="close" type="button" aria-label="Close">✕</button><div id="modal-body"></div></dialog>
+<footer>Data: REST Countries API &middot; Built by Avinash Kumar, HMRITM</footer>
+<script src="script.js"></script>
+</body>
+</html>
